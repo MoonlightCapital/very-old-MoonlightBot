@@ -257,7 +257,7 @@ setTimeout(() => {
   cooldown.delete(message.author.id);
 }, config.cooldowntimer);
   
-  var commands = ['blessedimage', 'oof','help', 'ping', 'invite', 'support', 'vote', 'servers', 'botinfo', 'setstatus', 'kick', 'ban', 'softban', 'mute', 'userinfo', 'unmute', 'dbtest', 'setlogchannel', 'addmodrole', 'settings'];
+  var commands = ['blessedimage', 'oof','help', 'ping', 'invite', 'support', 'vote', 'servers', 'botinfo', 'setstatus', 'kick', 'ban', 'softban', 'mute', 'userinfo', 'unmute', 'dbtest', 'setlogchannel', 'addmodrole', 'settings', 'memory'];
   
   var commandname = message.content.replace(config.prefix, '');
   
@@ -751,7 +751,13 @@ let cooldude;
       message.channel.send(settingsembed);
       
       break;
-                     }
+    
+      case 'memory':
+       if(message.member.id !== config.owner) return;
+       const used = process.memoryUsage().heapUsed / 1024 / 1024;
+       message.channel.send(`The script uses approximately ${Math.round(used * 100) / 100} MB`);
+    
+    break;             }
   
 });
 
