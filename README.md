@@ -17,8 +17,8 @@ Invite bot: https://discordapp.com/api/oauth2/authorize?client_id=31411069607188
 	"token": "YOUR_TOKEN_HERE",
   "owner": "YOUR_USER_ID",
   "DBLkey": "OPTIONAL",
-  "beta": false, //Internal flag for me to check if it's running the test version or anything else
-  "cooldowntimer": 3000 //Cooldown after using a command
+  "beta": false,
+  "cooldowntimer": 3000
   
 }
 ```
